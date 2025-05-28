@@ -1,0 +1,12 @@
+---
+title: "HW3"
+author: "Liam Gilson"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+```
+
+making some changes to doc
