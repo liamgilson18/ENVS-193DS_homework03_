@@ -26,7 +26,7 @@ library(janitor)     # For cleaning data
 #Problem 1 
 
 a. 
-With my data I have been tallying how much money I spend on eating out, and seperating that into what week of the quarter it is, and I would like to show the difference in money I spend eating out for each week. To do this, I would like to do statistical tests on the mean money spent per week, and try to find a trend on my spending habits as the quarter goes on.
+With my data I have been tallying how much money I spend on eating out, and seperating that into what week of the quarter it is, and I would like to show the difference in money I spend eating out for each week. To do this, I would like to do statistical tests on the mean money spent per meal, per week, and try to find a trend on my spending habits as the quarter goes on.
 
 b.  
 ```{r}
@@ -51,4 +51,37 @@ ggplot(weekly_avg, aes(x = factor(week_of_quarter), y = mean_price)) +
 ```
 
 c.
-The mean amount of spending per week appears to be on the rise as the weeks get closer to the end of the Quarter
+The mean amount of spending per meal, per week appears to be on the rise as the weeks get closer to the end of the Quarter
+
+d.
+```{r}
+weekly_avg %>%
+  mutate(mean_price = round(mean_price, 1)) %>%
+  gt() %>%
+  tab_header(
+    title = "Average Spending Per Week of the Quarter"
+  ) %>%
+  cols_label(
+    week_of_quarter = "Week of Quarter",
+    mean_price = "Mean Price ($)"
+  )
+```
+
+
+#Problem 2
+
+a. Since my data has to do with the money I am spending on food, maybe my visual could have something to do with food. Accoring to my data I eat a lot of Woodstocks and Rusties Pizza, so maybe I could a pie chart, where the circle is a pizza and the percent of the total money. I would have to turn my means into percentages of a total, but other than that I would look great.
+
+b.
+
+c.
+
+d.   My work depicts the differences in average cost of meal that I spend each week, as slices of a pizza, which was inspired by my own spendings, when I noticed that I was spending lots of money on pizza. I created my visualization on Google Draw, and my process consisted of finding a good image, created sperations or slices, and putting some quantitative data to display how much of the pie said slice is.
+
+
+#Problem 3 
+
+a.
+This paper has a T-test that was comparing the average concentration of post storm ambient concentrations with ASBS discharge sites. the discharge sites were the predictor variable and the concentrations were the response variable.
+
+b. 
