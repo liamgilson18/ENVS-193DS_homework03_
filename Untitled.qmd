@@ -2,7 +2,7 @@
 title: "HW3"
 author: "Liam Gilson"
 format: html
-editor: visual
+date: 5/28/25
 ---
 
 ---
@@ -14,13 +14,11 @@ install.packages("here")
 ```
 
 ```{r}
-library(tidyverse)   # For data manipulation and visualization
-library(here)        # For working with file paths
-library(gt)          # For creating tables (you could also use flextable instead)
-library(janitor)     # For cleaning data
+library(tidyverse)   # load in tidyverse
+library(here)        # load in here
+library(gt)          # load in gt
+library(janitor)     # load in janitor
 
-# Optionally, load other helpful packages
-# library(readxl)    # If you're reading Excel files
 ```
 
 #Problem 1 
@@ -31,20 +29,19 @@ With my data I have been tallying how much money I spend on eating out, and sepe
 b.  
 ```{r}
 
-data <- read_csv("Book2.csv")
+data <- read_csv("Book2.csv") #create an object of my data
 
-# Group by week_of_quarter and compute mean price
 weekly_avg <- data %>%
-  group_by(week_of_quarter) %>%
+  group_by(week_of_quarter) %>%        # Group by week_of_quarter and compute mean price
   summarise(mean_price = mean(price, na.rm = TRUE)) %>%
   arrange(week_of_quarter)
 
-# Plot: Mean price per week of the quarter
-ggplot(weekly_avg, aes(x = factor(week_of_quarter), y = mean_price)) +
-  geom_col(fill = "dodgerblue") +
+
+ggplot(weekly_avg, aes(x = factor(week_of_quarter), y = mean_price)) +  # Plot: Mean price per week of the quarter
+  geom_col(fill = "dodgerblue") + #make the color blue
   labs(
     title = "Mean Spending on Eating Out per Week",
-    x = "Week of Quarter",
+    x = "Week of Quarter",                          # title the axes and visual
     y = "Mean Price ($)"
   ) +
   theme_minimal()
@@ -56,13 +53,13 @@ The mean amount of spending per meal, per week appears to be on the rise as the 
 d.
 ```{r}
 weekly_avg %>%
-  mutate(mean_price = round(mean_price, 1)) %>%
+  mutate(mean_price = round(mean_price, 1)) %>% 
   gt() %>%
   tab_header(
-    title = "Average Spending Per Week of the Quarter"
+    title = "Average Spending Per Week of the Quarter" #give table a title
   ) %>%
   cols_label(
-    week_of_quarter = "Week of Quarter",
+    week_of_quarter = "Week of Quarter",   #title the two columns of my table
     mean_price = "Mean Price ($)"
   )
 ```
@@ -84,4 +81,13 @@ d.   My work depicts the differences in average cost of meal that I spend each w
 a.
 This paper has a T-test that was comparing the average concentration of post storm ambient concentrations with ASBS discharge sites. the discharge sites were the predictor variable and the concentrations were the response variable.
 
+
+
 b. 
+I think that they did a fairly good job showing the data, it lacks in artistic appeal, but the axes make sense and the figure does a great job showing summary statistics, such as center, spread, and how each contaminant compares to the each other.
+
+c. 
+How well did the authors handle “visual clutter”? How would you describe the the data:ink ratio?
+The visual clutter is done fairly well, while they balance of information on this figure well, from an artistic standpoint theres a lot of empty space. The x axis is also very cramped, and I think they could have worked harder on making the axis titles not so in your face.
+
+d. I would change a few different things. First, we need to find a way to make the data with less variation more visually appealing. This might take changing the intervals on the y axis. Also, the x axis label is cramped. They a good job making it slanted for visual appeal, but maybe thinner font, so our eyes go to the data first. Also theres no units for the y axis so im not sue what the concentration is measuerd in. Also, id like to see the legend outside of the chart. Putting it to the side would help the visual flow. 
