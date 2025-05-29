@@ -1,0 +1,28 @@
+---
+title: "HW3"
+author: "Liam Gilson"
+format: html
+editor: visual
+---
+
+---
+
+<https://github.com/liamgilson18/ENVS-193DS_homework03_.git>
+
+```{r}
+install.packages("here")
+```
+
+```{r}
+library(tidyverse)   # For data manipulation and visualization
+library(here)        # For working with file paths
+library(gt)          # For creating tables (you could also use flextable instead)
+library(janitor)     # For cleaning data
+
+# Optionally, load other helpful packages
+# library(readxl)    # If you're reading Excel files
+```
+
+#Problem 1 a. With my data I have been tallying how much money I spend on eating out, and seperating that into what week of the quarter it is, and I would like to show the difference in money I spend eating out for each week. To do this, I would like to do statistical tests on the mean money spent per week, and try to find a trend on my spending habits as the quarter goes on.
+
+b.  new stuff
