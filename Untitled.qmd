@@ -28,4 +28,27 @@ library(janitor)     # For cleaning data
 a. 
 With my data I have been tallying how much money I spend on eating out, and seperating that into what week of the quarter it is, and I would like to show the difference in money I spend eating out for each week. To do this, I would like to do statistical tests on the mean money spent per week, and try to find a trend on my spending habits as the quarter goes on.
 
-b.  new stuff
+b.  
+```{r}
+
+data <- read_csv("Book2.csv")
+
+# Group by week_of_quarter and compute mean price
+weekly_avg <- data %>%
+  group_by(week_of_quarter) %>%
+  summarise(mean_price = mean(price, na.rm = TRUE)) %>%
+  arrange(week_of_quarter)
+
+# Plot: Mean price per week of the quarter
+ggplot(weekly_avg, aes(x = factor(week_of_quarter), y = mean_price)) +
+  geom_col(fill = "dodgerblue") +
+  labs(
+    title = "Mean Spending on Eating Out per Week",
+    x = "Week of Quarter",
+    y = "Mean Price ($)"
+  ) +
+  theme_minimal()
+```
+
+c.
+The mean amount of spending per week appears to be on the rise as the weeks get closer to the end of the Quarter
