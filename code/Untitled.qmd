@@ -11,7 +11,7 @@ date: 5/28/25
 
 <https://github.com/liamgilson18/ENVS-193DS_homework03_.git>
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(tidyverse)   # load in tidyverse
 library(here)        # load in here
 library(gt)          # load in gt
@@ -25,7 +25,7 @@ a.  With my data I have been tallying how much money I spend on eating out, and 
 
 b.  
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 data <- read_csv(here("data", "Book2.csv")) #create an object of my data
 
@@ -45,7 +45,7 @@ ggplot(weekly_avg, aes(x = factor(week_of_quarter), y = mean_price)) +  # Plot: 
   theme_minimal()
 ```
 
-c.  The mean amount of spending per meal, per week appears to be on the rise as the weeks get closer to the end of the Quarter
+c.  The mean amount of spending per meal, per week appears to be on the rise as the weeks get closer to the end of the quarter.
 
 d.  
 
