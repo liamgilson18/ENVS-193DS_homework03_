@@ -1,5 +1,5 @@
 ---
-title: "HW3"
+title: "Homework 3"
 author: "Liam Gilson"
 format:
   html:
