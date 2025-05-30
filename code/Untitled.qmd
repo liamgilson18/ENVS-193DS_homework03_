@@ -66,10 +66,11 @@ weekly_avg %>%
 
 a.  Since my data has to do with the money I am spending on food, maybe my visual could have something to do with food. Accoring to my data I eat a lot of Woodstocks and Rusties Pizza, so maybe I could a pie chart, where the circle is a pizza and the percent of the total money. I would have to turn my means into percentages of a total, but other than that I would look great.
 
+b. 
 ![](InitialSketch.png)
 
 c.  
-
+![](FinalImageB.png)
 d.  My work depicts the differences in average cost of meal that I spend each week, as slices of a pizza, which was inspired by my own spendings, when I noticed that I was spending lots of money on pizza. I created my visualization on Google Draw, and my process consisted of finding a good image, created sperations or slices, and putting some quantitative data to display how much of the pie said slice is.
 
 # Problem 3
